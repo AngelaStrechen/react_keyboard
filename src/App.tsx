@@ -40,7 +40,8 @@ export class App extends React.Component<{}, State> {
   // Викликається перед видаленням компонента
   componentWillUnmount() {
     // Видаляємо listener
-    // Це потрібно щоб уни    document.removeEventListener('keyup', this.handleKeyUp);
+    // Це потрібно щоб уникнути memory leak
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   // Метод render відповідає за відображення UI
