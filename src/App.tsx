@@ -39,8 +39,7 @@ export class App extends React.Component<{}, State> {
   // Lifecycle метод
   // Викликається перед видаленням компонента
   componentWillUnmount() {
-    // Видаляємо listener
-    // Це потрібно щоб уникнути memory leak
+    // Видаляємо listener щоб уникнути memory leak
     document.removeEventListener('keyup', this.handleKeyUp);
   }
 
